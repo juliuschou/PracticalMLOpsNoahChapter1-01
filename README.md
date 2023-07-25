@@ -176,11 +176,48 @@ To interact with GitHub without the need for entering a username and password ev
     git config --global user.email "your_email@example.com"
     git remote set-url origin git@github.com:YourUsername/YourRepository.git
     ```
-    
+## Create an Empty Repository on GitHub    
+Before you can push your code, you need to create an empty repository on GitHub:
+1. Log in to your GitHub account.
+2. Click on the "+" sign in the top right corner of the GitHub website.
+3. Select "New repository" from the dropdown menu.
+4. Give your repository a name and, optionally, a description.
+5. Choose if you want your repository to be public or private (private repositories may require a paid GitHub plan).
+6. Do not select any checkboxes for initializing the repository with README, .gitignore, or a license, as we'll push an existing repository.
+7. Click on the "Create repository" button.
+
+## Push Code to GitHub
+Now that you have generated an SSH key, added it to your GitHub account, configured Git to use SSH, and created an empty repository on GitHub, you can push your code to GitHub:
+```
+# Navigate to your project directory (the directory where your code is located) 
+cd /path/to/your/project # Initialize Git (if not already initialized) 
+git init 
+# Add the files you want to commit to the staging area 
+git add . 
+# Commit the changes with a meaningful message 
+git commit -m "Your commit message here" 
+# Push the committed changes to the master branch of your GitHub repository 
+git push origin master
+```
+
 
 ## Adding a Workflow to Your Git Repository
 
+
 Finally, to add a workflow to your repository, create a GitHub Actions workflow file in the `.github/workflows` directory with the name `python-app.yml`:
+
+Here are the steps to add a workflow to your Git repository:
+
+1. Create a Workflow YAML File:
+
+- In your local project directory, create a new directory named .github/workflows. This is where GitHub Actions will look for workflow files. Inside the workflows directory, create a YAML file with a meaningful name, for example, my_workflow.yml. This file will define the steps and jobs for your workflow.
+
+2. Define the Workflow: 
+
+- Open the my_workflow.yml file in a text editor and define your workflow using the YAML syntax. The workflow can have one or more jobs, and each job can consist of multiple steps. Here's a simple example of a workflow that runs on every push to the main branch:
+
+- This example workflow consists of a single job named "build." It runs on every push event to the "main" branch, and it includes two steps: one to check out the repository code and another to build the project.
+
 
 ```
 name: Azure Python 3.5
@@ -204,8 +241,18 @@ jobs:
       run: |
         make test 
 ```
-Commit and push this file to the repository, and you can observe the workflow under the "Actions" tab of your repository.
+3. Commit and Push:
 
+- After creating and saving the workflow file, you need to commit it to your local repository and push the changes to the remote repository. Use the following commands:
+
+```
+git add .github/workflows/my_workflow.yml
+git commit -m "Add my_workflow.yml"
+git push origin main
+```
+4. Verify the Workflow on the Remote Repository:
+- Once the changes are pushed to the remote repository, navigate to the repository on GitHub or your Git hosting platform. Go to the "Actions" tab, and you should see your workflow listed there. GitHub Actions will automatically detect the new workflow file and start running it based on the defined triggers.
+  
 ## Conclusion
 
 This guide leads you through setting up an MLOps environment with Python on CentOS, implementing basic DevOps practices, interacting with GitHub via SSH, and adding an automated workflow to your GitHub repository. By following these steps, you will have a solid start in your MLOps journey.
