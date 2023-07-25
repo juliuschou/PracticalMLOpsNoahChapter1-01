@@ -183,33 +183,26 @@ To interact with GitHub without the need for entering a username and password ev
 Finally, to add a workflow to your repository, create a GitHub Actions workflow file in the `.github/workflows` directory with the name `python-app.yml`:
 
 ```
-name: Python application
-
+name: Azure Python 3.5
 on: [push]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+    - name: Set up Python 3.7.17
+      uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.7.17
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Lint with pylint
+        make install
+    - name: Lint
       run: |
-        pip install pylint
-        pylint --disable=R,C hello.py
-    - name: Test with pytest
+        make lint
+    - name: Test
       run: |
-        pip install pytest pytest-cov
-        python -m pytest -vv --cov=hello test_hello.py
+        make test 
 ```
 Commit and push this file to the repository, and you can observe the workflow under the "Actions" tab of your repository.
 
