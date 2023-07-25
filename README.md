@@ -18,7 +18,7 @@ The first step is to ensure that you have Python 3.6 and pip installed. Follow t
 
 ### Enabling Software Collections (SCL)
 
-1.  Run this command to install the CentOS SCL release file:
+-  Run this command to install the CentOS SCL release file:
     
     `sudo yum install centos-release-scl` 
     
@@ -89,6 +89,10 @@ Having set up the virtual environment, we will now install some required package
 ## Implementing DevOps
 
 In this section, we'll develop a simple Python program and create a `Makefile` to automate some development tasks.
+
+![image](https://github.com/juliuschou/PracticalMLOpsNoahChapter1-01/assets/4725611/44304074-2ae9-4078-9b6e-837984bda4ce)
+
+Source: Practical MLOps by Noah Gift, Alfredo Deza
 
 ### Create hello.py
 
