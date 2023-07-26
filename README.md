@@ -1,6 +1,9 @@
 
 # Practical MLOps: A Step-By-Step Guide
 
+Create a new GitHub repository with necessary Python scaffolding using a Makefile, linting, and testing. Then, perform additional steps such as code formatting in your Makefile.
+
+
 ## Introduction
 
 Welcome to the Practical MLOps tutorial repository! This repository is a step-by-step guide to creating a new GitHub repository with the necessary Python scaffolding, employing Makefile, linting, testing, and additional steps such as code formatting as the first exercise of chapter 1 from "Practical MLOps" by Noah Gift and Alfredo Deza. Here, we also cover the details of installing and upgrading Python and other necessary development tools.
