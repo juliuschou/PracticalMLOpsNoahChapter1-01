@@ -194,12 +194,16 @@ Now that you have generated an SSH key, added it to your GitHub account, configu
 # Navigate to your project directory (the directory where your code is located) 
 cd /path/to/your/project # Initialize Git (if not already initialized) 
 git init
-# set remote github repository
-git remote set-url origin git@github.com:YourUsername/YourRepository.git
+
 # Add the files you want to commit to the staging area 
 git add . 
+
 # Commit the changes with a meaningful message 
 git commit -m "Your commit message here" 
+
+# set remote github repository
+git remote add origin git@github.com:YourUsername/YourRepository.git
+
 # Push the committed changes to the master branch of your GitHub repository 
 git push origin master
 ```
