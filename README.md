@@ -177,7 +177,6 @@ To interact with GitHub without the need for entering a username and password ev
     ```
     git config --global user.name "Your GitHub Username"
     git config --global user.email "your_email@example.com"
-    git remote set-url origin git@github.com:YourUsername/YourRepository.git
     ```
 ## Create an Empty Repository on GitHub    
 Before you can push your code, you need to create an empty repository on GitHub:
@@ -194,7 +193,9 @@ Now that you have generated an SSH key, added it to your GitHub account, configu
 ```
 # Navigate to your project directory (the directory where your code is located) 
 cd /path/to/your/project # Initialize Git (if not already initialized) 
-git init 
+git init
+# set remote github repository
+git remote set-url origin git@github.com:YourUsername/YourRepository.git
 # Add the files you want to commit to the staging area 
 git add . 
 # Commit the changes with a meaningful message 
